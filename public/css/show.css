@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-image: url("/images/show-pic3.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Poiret One', cursive;
+}
+
+
+nav{
+    position: absolute;
+    top: 0;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    background-color: rgb(31, 0, 0);
+
+}
+nav a{
+    color: white;
+    text-decoration: none;
+}
+
+.container{
+    width: 600px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    margin: 30px auto;
+    padding: 12px;
+    background-color: rgba(233, 233, 233, 0.925);
+    border-radius: 5px;
+}
+
+.image-container{
+    width: 40%;
+    padding:12px;
+    text-align: center;
+}
+.image{
+    height: 270px;
+}
+/* Price containre=== */
+.price-container{
+   
+    width:45%;
+    padding: 12px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.rating{
+    color: rgb(148, 148, 148);
+    font-size: .7em
+}
+
+
+/* Place container==== */
+.place-container{
+    height: 80px;
+    padding: 25px 12px;
+    width: 100%;
+    border-top: 1px solid rgba(43, 43, 43, 0.26);
+    border-bottom: 1px solid rgba(43, 43, 43, 0.26);
+}
+
+.winery{
+    font-size: 2.5em;
+    margin:15px auto;
+}
+
+
+/* more information container */
+.more-information{
+    padding: 12px;
+    width: 100%;
+}

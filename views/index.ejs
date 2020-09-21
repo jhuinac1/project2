@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/products/seed">★★seed★★</a>
+        <a href="/"> ★ home ★</a>
+        <ul>
+            <li> <a href="#">Log In</a></li>
+            <li> <a href="#">Sign Up</a></li>
+        </ul>
+    </nav>
+    <div class="welcome">
+        <h2 class="title">Welcome</h2>
+    </div>
+    <div class="container">
+        <ul class="wine-list">
+            <% for (let i = 0; i < products.length; i++){ %>
+            <li class="wine">
+                <a href="/products/<%=products[i]._id%>"> <%= products[i].name %></a>
+                <a href="#"> <%= products[i].winery %></a>
+                <a href="#">
+                    <img height="250px" src="<%= products[i].img%>" alt="">
+                </a>
+                <p> $<%=products[i].price%></p>
+            </li>
+            <%} %>
+        </ul>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Page</title>
+    <link rel="stylesheet" href="/css/show.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/"> ★ home ★</a>
+    </nav>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="<%=product.img%>" alt="<%=product.img%> image" class="image">
+        </div>
+        <div class="price-container">
+            <h3><%=product.ratings%> <span class="rating"><%=product.numberOfRatings%> ratings</span></h3>
+            <h4 class="name"><%=product.name%></h4>
+            <h5 class="price">Price: <%=product.price%></h5>
+            <h5 class="quantity">Quantity:<%=product.quantity%></h5>
+        </div>
+        <div class="place-container">
+            <h5 class="winery"><%=product.winery%></h5>
+            <h5 class="region"><%=product.type%> from <span><%=product.region%>, <%=product.country%></span></h5>
+        </div>
+        <div class="more-information">
+            <h5>Grapes:</h5>
+            <p class="grapes"><%=product.grapes%></p>
+            <h5>Notes:</h5>
+            <p class="description"><%=product.description%></p>
+        </div>
+    </div>
+</body>
+
+</html>

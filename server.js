@@ -6,13 +6,13 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const app = express();
 const db = mongoose.connection;
+const productController = require("./controllers/products");
 require("dotenv").config();
 //___________________
 //Port
 //___________________
 // Allow use of Heroku's port or your own local port, depending on the environment
 const PORT = process.env.PORT || 3003;
-
 //___________________
 //Database
 //___________________
@@ -47,10 +47,12 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 //___________________
 // Routes
+app.use("/products", productController);
+
 //___________________
 //localhost:3000
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.redirect("/products");
 });
 
 //___________________
