@@ -257,3 +257,30 @@ nav li {
     background-color: rgb(153, 0, 0);
     color: white;
 }
+
+
+/* ======= COMENTS CONTAINER ========= */
+.all-comments-container {
+    width: 600px;
+    background-color: rgba(233, 233, 233, 0.925);
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    padding: 12px;
+}
+
+.comment-list{
+    width: 500px;
+    margin: 20px auto;
+}
+.single-comment {
+    list-style: none;
+    padding: 12px;
+    margin: 15px auto;
+}
+.username-comment{
+    background-color: rgba(165, 42, 42, 0.548);
+}
+.user-commnet{
+    background-color: rgba(95, 158, 160, 0.479);
+}

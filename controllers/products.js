@@ -76,7 +76,7 @@ productsRt.put("/:id", (req, res) => {
 
 ////Adding a review to the show page-----
 productsRt.post("/:id/comment", isUserAuth, (req, res) => {
-    let id = req.session.currentUser._id
+
     req.body.username = req.session.currentUser.username;
     req.body.wineId = req.params.id;
     console.log("step1 done");
@@ -116,7 +116,7 @@ productsRt.get("/new", isAuthenticated, (req, res) => {
         });
 });
 
-///show....
+///show item with comments....
 productsRt.get("/:id", (req, res) => {
     Product.findById(req.params.id, (error, foundProduct) => {
         console.log(foundProduct);
@@ -124,6 +124,7 @@ productsRt.get("/:id", (req, res) => {
         if (req.session.currentUser) {
             isAdmin = req.session.currentUser.isAdmin || false;
         };
+        console.log(req.session.username);
         Comments.find({ wineId: req.params.id }, (error, commentList) => {
             console.log(commentList, req.params.id);
             res.render("show.ejs", {
