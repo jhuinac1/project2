@@ -4,7 +4,7 @@ const sessions = express.Router();
 const User = require("../models/users");
 
 sessions.get("/new", (req, res) => {
-    res.render("sessions/loginUser.ejs", {
+    res.render("sessions/logInUser.ejs", {
         currentUser: req.session.currentUser,
     });
 });
