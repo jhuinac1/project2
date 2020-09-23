@@ -50,8 +50,8 @@
             <% for (let i = 0; i < products.length; i++){ %>
             <li class="wine">
                 <a href="/products/<%=products[i]._id%>"> <%= products[i].name %></a>
-                <a href="#"> <%= products[i].winery %></a>
-                <a href="#">
+                <a href="/products/<%=products[i]._id%>"> <%= products[i].winery %></a>
+                <a href="/products/<%=products[i]._id%>">
                     <img height="250px" src="<%= products[i].img%>" alt="">
                 </a>
                 <p> $<%=products[i].price%></p>

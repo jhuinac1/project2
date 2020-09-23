@@ -71,13 +71,21 @@
     </div>
     <!-- comments Section -->
     <div class="add-comment-container">
-        <form action="/products/comment" method="POST">
+        <form action="/products/<%=product.id%>/comment" method="POST">
             <label for="comment">Write a Review</label>
             <textarea name="comments" id="comment" cols="30" rows="7"></textarea>
             <input type="submit" value="Post">
         </form>
     </div>
     <div class="all-comments-container">
+        <ul class="comment-list">
+            <% for (let i = 0; i < comment.length; i++){ %>
+            <li class="single-comment">
+                <h3 class="username-comment"><%=comment[i].username%></h3>
+                <p><%=comment[i].comments%></p>
+            </li>
+            <%} %>
+        </ul>
 
     </div>
 
