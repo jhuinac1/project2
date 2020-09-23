@@ -35,9 +35,19 @@ productsRt.get("/seed", (req, res) => {
 //////Deleting Data
 productsRt.delete("/:id", isAuthenticated, (req, res) => {
     Product.findByIdAndRemove(req.params.id, (error, wineData) => {
-        res.redirect("/products");
+        if (wineData) {
+            res.redirect("/products");
+        }
+        else {
+            res.send("getting somewhere");
+        }
     });
 });
+productsRt.delete("/comment/:id", (req, res) => {
+    Comments.findByIdAndRemove(req.params.id, (error, commentData) => {
+        res.redirect("/products/" + commentData.wineId);
+    });
+})
 ////passing the item to edit and open
 ///in edit page
 productsRt.get("/:id/edit", isAuthenticated, (req, res) => {
@@ -79,18 +89,18 @@ productsRt.post("/:id/comment", isUserAuth, (req, res) => {
 
     req.body.username = req.session.currentUser.username;
     req.body.wineId = req.params.id;
-    console.log("step1 done");
+    // console.log("step1 done");
     Product.findById(req.params.id, (error, foundProduct) => {
-        console.log("step2 done");
+        // console.log("step2 done");
         Comments.create(req.body, (error, data) => {
             let isAdmin;
             if (req.session.currentUser) {
                 isAdmin = req.session.currentUser.isAdmin || false;
             };
-            console.log("step3 done");
+            // console.log("step3 done");
             Comments.find({ wineId: req.params.id }, (error, commentList) => {
-                console.log(commentList);
-                console.log("step4 done");
+                // console.log(commentList);
+                // console.log("step4 done");
                 res.render("show.ejs", {
                     product: foundProduct,
                     user: req.session.currentUser,
@@ -119,14 +129,14 @@ productsRt.get("/new", isAuthenticated, (req, res) => {
 ///show item with comments....
 productsRt.get("/:id", (req, res) => {
     Product.findById(req.params.id, (error, foundProduct) => {
-        console.log(foundProduct);
+        // console.log(foundProduct);
         let isAdmin;
         if (req.session.currentUser) {
             isAdmin = req.session.currentUser.isAdmin || false;
         };
-        console.log(req.session.username);
+        // console.log(req.session.username);
         Comments.find({ wineId: req.params.id }, (error, commentList) => {
-            console.log(commentList, req.params.id);
+            // console.log(commentList, req.params.id);
             res.render("show.ejs", {
                 product: foundProduct,
                 user: req.session.currentUser,

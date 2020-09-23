@@ -83,7 +83,20 @@
             <li class="single-comment">
                 <div class="user-icon"></div>
                 <h3 class="username-comment"><%=comment[i].username%></h3>
+                <%if(isAdmin){%>
+                <form action="/products/comment/<%=comment[i].id%>?_method=delete" method="POST">
+                    <input type="submit" value="Delete" class="delete-comment">
+                </form>
+                <%} else if(user) {
+                    if(user.username === comment[i].username){%>
+                <form action="/products/comment/<%=comment[i].id%>?_method=delete" method="POST">
+                    <input type="submit" value="Delete" class="delete-comment">
+                </form>
+                <%}
+                }%>
+
                 <p class="user-comment"><%=comment[i].comments%></p>
+
             </li>
             <%} %>
         </ul>

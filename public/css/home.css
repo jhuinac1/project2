@@ -72,12 +72,23 @@ nav li {
 }
 /* Welcome page */
 .welcome{
-    height: 500px;
+    height: 570px;
     background-image: url("/images/index2.jpg");
     margin: auto;
     background-size: cover;
     color: rgb(5, 5, 5);
     font-weight: 900;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.opacity-title{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.267);
 }
 .title{
     display: flex;
@@ -85,23 +96,77 @@ nav li {
     justify-content: center;
     font-size: 5em;
     text-shadow: 2px 2px rgb(255, 255, 255);
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.397);
+    z-index: 1;
+    margin-bottom: 20px;
 }
+.welcome a{
+    z-index: 1;
+    padding: 10px 70px;
+    font-size: 1.9em;
+    border-radius: 2px;
+    margin: 5px;
+    cursor: pointer;
+}
+.log-container{
+    margin: 15px;
+    z-index: 1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.log-in{
+    background-color: rgb(255, 255, 255);
+    color: darkslategray;
+    border: 1px solid rgba(47, 79, 79, 0.377);
+}
+.sign-up{
+    background-color: rgb(47, 79, 79);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.404);
+
+}
+
+
+
+.our-selection{
+    text-align: center;
+    padding: 100px 0;
+    margin: 40px auto;
+    font-size: 5em;
+    text-shadow: 1px 1px 2px darkslategray;
+}
+
+
+
+
+
+
 /* wine list */
+.container{
+    margin-bottom: 100px;
+}
 .wine-list{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 20px;
+}
+.detail{
+    padding: 4px 20px;
+    transition: .3s ease-in;
 }
 .wine{
     display: flex;
     flex-flow: column;
-    margin: 10px;
     text-align: center;
-    border: 1px solid rgba(71, 71, 71, 0.205);
-    padding: 15px;
-    border-radius: 5px;
+    border-bottom: 1px solid rgba(71, 71, 71, 0.205);
+    transition: .3s ease-in;
+}
+.wine:hover .detail{
+    background-color: rgba(211, 211, 211, 0.616);
+}
+
+.wine a{
+    color: darkslategray;
+
 }

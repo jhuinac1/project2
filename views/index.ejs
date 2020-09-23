@@ -35,7 +35,6 @@
             </form>
         </div>
         <%} else {%>
-
         <ul>
             <li> <a href="/sessions/new">Log In</a></li>
             <li> <a href="/users/new">Sign Up</a></li>
@@ -43,18 +42,24 @@
         <%}}%>
     </nav>
     <div class="welcome">
+        <div class="opacity-title"></div>
         <h2 class="title">Welcome</h2>
+        <div class="log-container">
+            <a href="/sessions/new" class="log-in">Log In</a>
+            <a href="/users/new" class="sign-up">Sign UP</a>
+        </div>
     </div>
+    <h1 class="our-selection">Our Selection</h1>
     <div class="container">
         <ul class="wine-list">
             <% for (let i = 0; i < products.length; i++){ %>
             <li class="wine">
-                <a href="/products/<%=products[i]._id%>"> <%= products[i].name %></a>
-                <a href="/products/<%=products[i]._id%>"> <%= products[i].winery %></a>
                 <a href="/products/<%=products[i]._id%>">
                     <img height="250px" src="<%= products[i].img%>" alt="">
                 </a>
-                <p> $<%=products[i].price%></p>
+                <a href="/products/<%=products[i]._id%>" class="detail"> <%= products[i].name %></a>
+                <a href="/products/<%=products[i]._id%>" class="detail"> <%= products[i].winery %></a>
+                <p class="detail price"> $<%=products[i].price%></p>
             </li>
             <%} %>
         </ul>
