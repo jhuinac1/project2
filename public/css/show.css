@@ -267,6 +267,7 @@ nav li {
     margin: 0 auto;
     margin-bottom: 12px;
     padding: 12px;
+    
 }
 
 .comment-list{
@@ -277,10 +278,31 @@ nav li {
     list-style: none;
     padding: 12px;
     margin: 15px auto;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.user-icon{
+    height: 30px;
+    width: 30px;
+    background-image: url("../icons/user4.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(1px);
 }
 .username-comment{
-    background-color: rgba(165, 42, 42, 0.548);
+    /* background-color: rgba(77, 0, 0, 0.87); */
+    padding: 7px 12px 2px 12px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: rgb(27, 0, 0);
 }
-.user-commnet{
-    background-color: rgba(95, 158, 160, 0.479);
+.user-comment{
+    background-color: rgba(85, 85, 85, 0.479);
+    width: 100%;
+    padding: 12px 25px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    min-height: 100px;
 }
