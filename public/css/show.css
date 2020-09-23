@@ -9,7 +9,9 @@ body{
     background-attachment: fixed;
     font-family: 'Poiret One', cursive;
 }
-
+a{
+    text-decoration: none;
+}
 
 nav{
     position: absolute;
@@ -19,12 +21,71 @@ nav{
     justify-content: space-around;
     align-items: center;
     position: sticky;
-    background-color: rgb(31, 0, 0);
+    background-color: rgb(29, 29, 29);
 
 }
 nav a{
+    margin-left: 5px;
+    border-radius: 5px;
+    padding: 7px 10px;
     color: white;
-    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid transparent;
+}
+strong{
+    color: rgb(168, 0, 0);
+}
+nav a:hover{
+    border: 1px solid rgba(255, 255, 255, 0.342);
+    background-color: rgb(66, 0, 0);
+    color: white;    
+}
+nav ul{
+    display: flex;
+}
+nav li {
+    list-style: none;
+    margin: 0 12px;
+}
+.admin-container{
+    display:flex;
+    align-items: center;
+}
+.admin-container input{
+    margin-left: 5px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color:  rgb(29, 29, 29);
+    border: none;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.603);
+    cursor: pointer;
+    outline: none;
+}
+.admin-container input:hover{
+    background-color: rgb(196, 0, 0);
+}
+.admin{
+    background-color: rgb(184, 184, 184);
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+/* for the remove button */
+.delete-item{
+    margin-left: 5px;
+    padding: 9px;
+    border-radius: 5px;
+    background-color:  rgb(29, 29, 29);
+    border: none;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.603);
+    cursor: pointer;
+    outline: none;
+}
+.delete-item:hover{
+    background-color: rgb(214, 2, 2);
+
 }
 
 .container{
@@ -48,8 +109,7 @@ nav a{
     height: 270px;
 }
 /* Price containre=== */
-.price-container{
-   
+.price-container{   
     width:45%;
     padding: 12px;
     /* border: 1px solid red; */
@@ -57,11 +117,54 @@ nav a{
     flex-flow: column;
     justify-content: center;
 }
+.price-container h3 {
+    font-size: 2.5em;
+    color: rgb(160, 0, 0);
+    margin-bottom: 3px;
+}
 .rating{
     color: rgb(148, 148, 148);
-    font-size: .7em
+    font-size: .5em;
 }
-
+.name{
+    color: rgba(83, 83, 83, 0.644);
+    text-shadow: .1px .1px rgba(97, 97, 97, 0.644);;
+    font-size: 1.2em;
+}
+.price{
+    margin: 10px 0;
+    font-size: 1.9em;
+    text-shadow: .1px .1px rgba(97, 97, 97, 0.644);
+}
+.quantity{
+    font-size: 1.4em;
+    color: rgb(82, 82, 82);
+}
+.sold-out{
+    padding: 0 12px;
+    margin: 20px auto;
+    color: rgb(173, 0, 0);
+    font-size: 1.1em;
+}
+.buy{
+    text-align: center;
+    width: 50px;
+    border: 1px solid rgba(165, 165, 165, 0.247);
+    font-size: 1.5em;
+    padding: 10px;
+    background-color: rgb(80, 80, 80);
+    text-decoration-line: none;
+    color: white;
+    transition: .1s linear;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+.buy:hover {
+    background-color: rgb(128, 0, 0);
+    border: 1px solid rgba(253, 0, 0, 0.986);
+    padding: 11px;
+    font-size: 1.6em;
+}
 
 /* Place container==== */
 .place-container{
@@ -74,12 +177,83 @@ nav a{
 
 .winery{
     font-size: 2.5em;
-    margin:15px auto;
+    margin:10px auto;
 }
+.region{
+    font-size: 1em;
+    color: rgb(58, 58, 58);
+    text-shadow: .1px .1px rgb(59, 59, 59);
+    
+}
+.from{
+    color: rgb(143, 143, 143);
+}
+    
 
 
 /* more information container */
 .more-information{
     padding: 12px;
     width: 100%;
+    font-size: 1em;
+    font-weight: 900;
+}
+.more-information h5{
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-shadow: .1px .1px rgba(39, 39, 39, 0.644);
+}
+.more-information p{
+    font-size: 1em;
+    text-shadow: .1px .1px rgba(34, 34, 34, 0.644);
+}
+
+
+/*========== COMMENT FORM CSS ===========*/
+
+.add-comment-container{
+    width: 600px;
+    background-color: rgba(233, 233, 233, 0.925);
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    padding: 12px;
+}
+.add-comment-container form{
+    text-align: center;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    padding: 12px;
+    background-color: rgb(252, 252, 252);
+    border-radius: 5px;
+    position: relative;
+    height: 200px;
+
+}
+.add-comment-container label{
+    font-size: 1.5em;
+}
+.add-comment-container textarea{
+    border: 1px solid rgba(68, 68, 68, 0.281);
+    outline: none;
+    margin: 20px;
+    overflow: auto;
+    border-radius: 5px;
+}
+.add-comment-container input{
+    position: absolute;
+    width: 100px;
+    bottom: 10px;
+    right: 40px;
+    padding: 7px;
+    border: 1px solid rgba(97, 97, 97, 0.322);
+    background-color: rgb(255, 209, 124);
+    border-radius: 5px;
+}
+.add-comment-container input:hover{
+    background-color: rgb(153, 0, 0);
+    color: white;
 }

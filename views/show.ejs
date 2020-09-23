@@ -6,11 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show Page</title>
     <link rel="stylesheet" href="/css/show.css">
+    <link rel="stylesheet" href="/css/footer.css">
 </head>
 
 <body>
     <nav>
-        <a href="/"> ★ home ★</a>
+        <a href="/"> HOME </a>
+        <% if (isAdmin) { %>
+        <div class="admin-container">
+            <h3 class="admin">Admin: <strong><%=user.username%></strong> </h3>
+            <form action="/admin?_method=DELETE" method="POST" class="two columns">
+                <input type="submit" value="Log Out" class="button" />
+            </form>
+        </div>
+        <form action="/products/<%=product.id%>?_method=delete" method="POST">
+            <input type="submit" value="Remove From List" class="delete-item">
+        </form>
+        <a href="/products/<%=product.id%>/edit">Edit Item</a>
+        <% } else { %>
+
+        <% } %>
+        <% if (!isAdmin) { %>
+        <% if(user) {%>
+        <div class="admin-container">
+            <h3 class="admin">Welcome <strong><%=user.username%></strong> </h3>
+            <form action="/sessions?_method=DELETE" method="POST" class="two columns">
+                <input type="submit" value="Log Out" class="button" />
+            </form>
+        </div>
+        <%} else {%>
+        <ul>
+            <li> <a href="/sessions/new">Log In</a></li>
+            <li> <a href="/users/new">Sign Up</a></li>
+        </ul>
+        <%}}%>
     </nav>
 
     <div class="container">
@@ -20,12 +49,18 @@
         <div class="price-container">
             <h3><%=product.ratings%> <span class="rating"><%=product.numberOfRatings%> ratings</span></h3>
             <h4 class="name"><%=product.name%></h4>
-            <h5 class="price">Price: <%=product.price%></h5>
-            <h5 class="quantity">Quantity:<%=product.quantity%></h5>
+            <h5 class="price">$<%=product.price%></h5>
+            <% if (product.quantity <= 0){ %>
+            <h3 class="sold-out">OUT OF STOCK!</h3>
+            <%} else { %>
+            <h5 class="quantity">In Stock: <%=product.quantity%> btl(s)</h5>
+            <a href="/products/<%=product.id%>/buy" class="buy">Buy</a>
+            <%} %>
         </div>
         <div class="place-container">
             <h5 class="winery"><%=product.winery%></h5>
-            <h5 class="region"><%=product.type%> from <span><%=product.region%>, <%=product.country%></span></h5>
+            <h5 class="region"><%=product.type%> <span class="from">from </span> <span><%=product.region%>,
+                    <%=product.country%></span></h5>
         </div>
         <div class="more-information">
             <h5>Grapes:</h5>
@@ -34,6 +69,20 @@
             <p class="description"><%=product.description%></p>
         </div>
     </div>
+    <!-- comments Section -->
+    <div class="add-comment-container">
+        <form action="/products/comment" method="POST">
+            <label for="comment">Write a Review</label>
+            <textarea name="comments" id="comment" cols="30" rows="7"></textarea>
+            <input type="submit" value="Post">
+        </form>
+    </div>
+    <div class="all-comments-container">
+
+    </div>
+
+    <!-- footer -->
+    <%- include ('./partials/footer.ejs') %>
 </body>
 
 </html>

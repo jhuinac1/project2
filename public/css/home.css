@@ -18,14 +18,50 @@ nav{
     justify-content: space-around;
     align-items: center;
     position: sticky;
-    background-color: rgb(31, 0, 0);
-
+    background-color: rgb(29, 29, 29);
+    box-shadow: 5px 0 5px black;
 }
 a{
     text-decoration: none;
 }
+.admin-container{
+    display:flex;
+    align-items: center;
+}
+.admin-container input{
+    margin-left: 5px;
+    padding: 9px;
+    border-radius: 5px;
+    background-color:  rgb(29, 29, 29);
+    border: none;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.603);
+    cursor: pointer;
+    outline: none;
+}
+.admin-container input:hover{
+    background-color: rgb(196, 0, 0);
+}
+.admin{
+    background-color: rgb(197, 197, 197);
+    padding: 4px 10px;
+    border-radius: 5px;
+    height: 25px;
+}
+strong{
+    color: rgb(168, 0, 0);
+}
+
 nav a{
     color: white;
+    padding: 7px 10px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+nav a:hover{
+    border: 1px solid rgba(255, 255, 255, 0.342);
+    background-color: rgb(66, 0, 0);
+    color: white;    
 }
 nav ul{
     display: flex;
@@ -36,11 +72,12 @@ nav li {
 }
 /* Welcome page */
 .welcome{
-    height: 400px;
+    height: 500px;
     background-image: url("/images/index2.jpg");
-    margin: 10px auto;
+    margin: auto;
     background-size: cover;
     color: rgb(5, 5, 5);
+    font-weight: 900;
 }
 .title{
     display: flex;
@@ -52,7 +89,7 @@ nav li {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.397);
 }
-
+/* wine list */
 .wine-list{
     display: flex;
     flex-flow: row wrap;

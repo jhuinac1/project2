@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+    <link rel="stylesheet" href="/css/new.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/"> ★ home ★</a>
+    </nav>
+    <h1>Edit Wine Information</h1>
+    <div class="form-container">
+        <form action="/products" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+            <label for="winery">Winery</label>
+            <input type="text" id="winery" name="winery">
+            <div class="left-inside-container">
+                <label for="region">Region</label>
+                <input type="text" id="region" name="region">
+                <div class="wine-type">
+                    <input type="radio" name="type" id="red-wine" value="Red Wine">
+                    <label for="red-wine">Red wine</label>
+                    <input type="radio" name="type" id="white-wine" value="White Wine">
+                    <label for="white-wine">white wine</label>
+                    <input type="radio" name="type" id="sparkling-wine" value="Sparkling Wine">
+                    <label for="sparkling-wine">Sparkling wine</label>
+                    <input type="radio" name="type" id="rose" value="Rose">
+                    <label for="rose">Rose</label>
+                </div>
+                <label for="rating" class="initial-rating">Initial Rating</label>
+                <input type="number" name="ratings" id="rating" min="0" max="5" step="0.1">
+            </div>
+            <div class="right-inside-container">
+                <label for="country">State & Country</label>
+                <input type="text" id="country" name="country">
+                <label for="price">Price</label>
+                <input type="number" step="0.01" name="price" id="price">
+                <label for="quantity">Quantity</label>
+                <input type="number" name="quantity" id="quantity" step="1" min="0">
+                <label for="number-rating">Initial # Of Ratings</label>
+                <input type="number" name="numberOfRatings" id="number-rating" min="0" step="1">
+            </div>
+            <label for="image">Image (url)</label>
+            <input type="text" name="img" id="image">
+            <label for="grapes">Grapes</label>
+            <input type="text" name="grapes" id="grapes">
+            <label for="description">Notes</label>
+            <textarea name="description" id="description" cols="30" rows="15"></textarea>
+
+            <input type="submit" id="submit" value="Add To Inventory">
+        </form>
+    </div>
+
+    <!-- footer -->
+    <%- include ('./partials/footer.ejs') %>
+
+</body>
+
+</html>

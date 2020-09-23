@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    /* border: 1px solid red; */
+}
+
+body{
+    color: white;
+    position: relative;
+    font-family: 'Poiret One', cursive;
+    background-image: url("/images/new1.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+nav{
+    position: absolute;
+    top: 0;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    background-color: rgb(29, 29, 29);
+    box-shadow: 1px 0 10px rgb(117, 117, 117);
+}
+a{
+    text-decoration: none;
+}
+nav a{
+    color: white;
+}
+nav ul{
+    display: flex;
+}
+nav li {
+    list-style: none;
+    margin: 0 12px;
+}
+
+/* Nav and body set up END */
+
+/* title start */
+h1{
+    width: 600px;
+    text-align: center;
+    margin: 20px auto;
+    height: 120px;
+    display: flex;
+    font-size: 2.5em;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.801);
+    text-shadow: 3px 3px 5px black;
+    border-radius: 1px;
+    padding: 12px;
+}
+
+/* TITLE END */
+
+
+/* FORM CONTAINER START */
+.form-container{
+    width: 600px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: rgba(32, 32, 32, 0.596);
+    padding: 12px;
+}
+form{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+label{
+    font-size: 1.5em;
+    padding: 0 12px;
+}
+form input{
+    padding: 10px 0;
+    outline: none;
+    transition-duration: .3s;
+    border: none;
+    width: 100%;
+}
+input{
+    margin-bottom: 16px;
+}
+
+form input:hover{
+    border-bottom: 2px solid rgb(30, 191, 255);
+}
+form input:focus{
+    border-bottom:2px solid rgb(30, 191, 255);
+}
+
+.left-inside-container{
+    width: 45%;
+}
+.right-inside-container{
+    width: 45%;
+}
+.wine-type{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    margin: 16px 0;
+}
+.wine-type input{
+    width: 10%;
+    margin-top: 3px;
+}
+.wine-type label{
+    width: 80%;
+}
+
+.initial-rating{
+    margin-top: 22px;
+}
+
+textarea{
+    width: 85%;
+}
+
+#submit{
+    margin: 15px auto;
+    width: 300px;
+    height: 60px;
+    font-family: 'Poiret One', cursive;
+    font-size: 1.5em;
+    background-color: burlywood;
+}
+#submit:hover{
+    background-color: cornflowerblue;
+    border: none;
+}

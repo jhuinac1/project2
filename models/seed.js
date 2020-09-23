@@ -41,4 +41,18 @@ module.exports = [
         numberOfRatings: 54,
         type: "Red Wine",
     },
+    {
+        name: "Cabernet Sauvignon 2017",
+        winery: "Joseph Phelps",
+        region: "Napa Valley",
+        ratings: "4.1",
+        country: "California, US",
+        price: "75.99",
+        quantity: "15",
+        numberOfRatings: "12",
+        type: "Red Wine",
+        img: "https://www.wine.com/product/images/w_1920,h_4479,c_fit,q_auto:good,fl_progressive/zget94jyzhzh4hophjhz.jpg",
+        grapes: "Blend: 92% Cabernet Sauvignon, 6% Malbec, 1% Petit Verdot and 1% Cabernet Franc",
+        description: "The 2017 Cabernet Sauvignon has expressive aromatics of blueberry, boysenberry, baking spices and cardamom. A fresh and inviting wine with unfolding layers of raspberry, red cherry, nutmeg, cedar and graphite with a medium-full body, seamless integrated tannins and a lengthy finish.",
+    },
 ]

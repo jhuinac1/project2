@@ -6,16 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index Page</title>
     <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/footer.css">
 </head>
 
 <body>
     <nav>
-        <a href="/products/seed">★★seed★★</a>
-        <a href="/"> ★ home ★</a>
+        <!-- Checking for user and allow seed/add/ items -->
+        <a href="/">HOME</a>
+        <% if (isAdmin) { %>
+        <div class="admin-container">
+            <h3 class="admin">Admin: <strong><%=user.username%></strong> </h3>
+            <form action="/admin?_method=DELETE" method="POST" class="two columns">
+                <input type="submit" value="Log Out" class="button" />
+            </form>
+        </div>
+        <a href="/products/new">Add New Item</a>
+        <a href="/products/seed">SEED</a>
+        <% } else { %>
+
+        <% } %>
+
+        <% if (!isAdmin) { %>
+        <% if(user) {%>
+        <div class="admin-container">
+            <h3 class="admin">Welcome <strong><%=user.username%></strong> </h3>
+            <form action="/sessions?_method=DELETE" method="POST" class="two columns">
+                <input type="submit" value="Log Out" class="button" />
+            </form>
+        </div>
+        <%} else {%>
+
         <ul>
-            <li> <a href="#">Log In</a></li>
-            <li> <a href="#">Sign Up</a></li>
+            <li> <a href="/sessions/new">Log In</a></li>
+            <li> <a href="/users/new">Sign Up</a></li>
         </ul>
+        <%}}%>
     </nav>
     <div class="welcome">
         <h2 class="title">Welcome</h2>
@@ -34,8 +59,8 @@
             <%} %>
         </ul>
     </div>
-
-
+    <!-- footer -->
+    <%- include ('./partials/footer.ejs') %>
 
 </body>
 

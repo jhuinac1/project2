@@ -1,0 +1,78 @@
+footer{
+    background-color: rgb(226, 226, 226);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+footer > div {
+    margin: 0 5px;
+}
+
+/* FIRST DIV */
+.first-div{
+    display: flex;
+    flex-wrap: wrap;
+}
+.first-div > a{
+    margin: 10px;
+    color: rgb(0, 48, 121);
+}
+.first-div > a:hover{
+    color: rgb(121, 0, 26);
+}
+
+
+
+
+
+/* CENTER DIV    */
+.center-div{
+    width: 170px;
+    border-right: 1px solid rgba(92, 92, 92, 0.274);
+    border-left: 1px solid rgba(92, 92, 92, 0.274);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center-div a{
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+}
+.insta{
+    background-image: url("../icons/insta.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.facebook{
+    background-image: url("../icons/face.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.twitter{
+    background-image: url("../icons/twitter.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.youtube{
+    background-image: url("../icons/youtube.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+/* LAST DIV */
+.last-div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+}
+.last-div a{
+    margin: 10px;
+    color: rgb(0, 67, 83);
+}
+.last-div a:hover{
+    color: rgb(102, 0, 0);
+}
