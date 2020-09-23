@@ -3,6 +3,9 @@ const Product = require("../models/product");
 const productsRt = express.Router();
 const seed = require("../models/seed");
 const Comments = require("../models/user-review");
+// const extraData = require("../models/extra-data");
+
+
 
 const isAuthenticated = (req, res, next) => {
     let isAdmin;

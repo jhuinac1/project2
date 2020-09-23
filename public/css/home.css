@@ -20,6 +20,7 @@ nav{
     position: sticky;
     background-color: rgb(29, 29, 29);
     box-shadow: 5px 0 5px black;
+    z-index: 2;
 }
 a{
     text-decoration: none;
@@ -120,13 +121,16 @@ nav li {
     border: 1px solid rgba(47, 79, 79, 0.377);
 }
 .log-in:hover{
-    background-color: rgb(190, 126, 5);
+    background-color: rgb(255, 196, 0);
 }
 .sign-up{
     background-color: rgb(47, 79, 79);
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.404);
-
+}
+.sign-up:hover{
+    background-color: rgb(255, 196, 0);
+    color: darkslategrey;
 }
 
 
@@ -138,10 +142,6 @@ nav li {
     font-size: 5em;
     text-shadow: 1px 1px 2px darkslategray;
 }
-
-
-
-
 
 
 /* wine list */
@@ -157,11 +157,17 @@ nav li {
 .detail{
     padding: 4px 20px;
     transition: .3s ease-in;
+    width: 230px;
+}
+.wine-name{
+    height:45px;
+
 }
 .wine{
     display: flex;
     flex-flow: column;
     text-align: center;
+    margin-bottom: 25px;
     border-bottom: 1px solid rgba(71, 71, 71, 0.205);
     transition: .3s ease-in;
 }

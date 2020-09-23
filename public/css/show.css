@@ -107,9 +107,11 @@ nav li {
     width: 40%;
     padding:12px;
     text-align: center;
+    overflow: hidden;
 }
 .image{
     height: 270px;
+    overflow: hidden;
 }
 /* Price containre=== */
 .price-container{   
