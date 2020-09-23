@@ -119,6 +119,9 @@ nav li {
     color: darkslategray;
     border: 1px solid rgba(47, 79, 79, 0.377);
 }
+.log-in:hover{
+    background-color: rgb(190, 126, 5);
+}
 .sign-up{
     background-color: rgb(47, 79, 79);
     color: white;

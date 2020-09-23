@@ -74,7 +74,7 @@ productsRt.get("/:id/buy", (req, res) => {
             res.redirect("/products/" + req.params.id);
         });
     } else {
-        res.render("sessions/loginUser.ejs");
+        res.render("sessions/logInUser.ejs");
     }
 });
 //////Now making changes to after edit
